@@ -321,31 +321,17 @@ hr {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
   text-decoration: none;
   color: var(--blue-dark);
   flex-shrink: 0;
 }
 
-.brand-mark { width: 38px; height: 38px; }
-
-.brand-text { display: flex; flex-direction: column; line-height: 1; }
-
-.brand-name {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.brand-sub {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  color: var(--teal-dark);
-  margin-top: 3px;
+/* Single supplied lockup, mark and wordmark together. Height drives the size,
+   width follows the intrinsic 350 x 88 ratio set on the img attributes. */
+.brand-logo {
+  display: block;
+  height: 34px;
+  width: auto;
 }
 
 /* Desktop navigation is hidden until there is room for it */
@@ -437,9 +423,12 @@ hr {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 78vh;
-  min-height: 78svh;
-  padding-block: clamp(3.5rem, 12vw, 7rem);
+  /* Exactly one screen below the sticky header, so the whole block lands
+     centred on arrival instead of running off the bottom of a phone. The vh
+     line is a fallback for browsers without svh. */
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
+  padding-block: clamp(1.5rem, 4svh, 7rem);
   overflow: hidden;
   isolation: isolate;
 }
@@ -463,14 +452,26 @@ hr {
   object-position: center 55%;
 }
 
-/* Scrim keeps the cream type readable over any photo */
+/* Cabins hero. The bunkie sits high and left in that photo, so the default
+   crop cuts it off. Pull the window up, and left as well, because narrow
+   screens crop this image horizontally rather than vertically. */
+.hero__media--high img {
+  object-position: 30% 20%;
+}
+
+/* Scrim keeps the cream type readable over any photo. Two layers: a radial pool
+   concentrated behind the text block, over a top-to-bottom base. The photo has a
+   bright sky and a bright band of water across the middle, which is exactly where
+   the logo and tagline sit, so the pool does the heavy lifting there while the
+   edges of the image stay reasonably open. */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(29, 58, 79, 0.55) 0%, rgba(29, 58, 79, 0.30) 40%, rgba(29, 58, 79, 0.78) 100%);
+    radial-gradient(ellipse 85% 65% at 50% 44%, rgba(20, 44, 62, 0.62) 0%, rgba(20, 44, 62, 0.28) 55%, rgba(20, 44, 62, 0) 78%),
+    linear-gradient(180deg, rgba(29, 58, 79, 0.78) 0%, rgba(29, 58, 79, 0.66) 45%, rgba(29, 58, 79, 0.90) 100%);
 }
 
 /* Interior heroes are short, so their text sits in the lightest part of the
@@ -482,10 +483,13 @@ hr {
 .hero__inner { position: relative; color: #fff; }
 .hero--center .hero__inner { text-align: center; max-width: 760px; margin-inline: auto; }
 
+/* The svh term is what keeps the stack on one screen. The logo is square and
+   easily the tallest item, so on a short phone it gives ground first rather
+   than pushing the buttons and badges below the fold. */
 .hero__logo {
-  width: min(280px, 72vw);
-  margin: 0 auto 1.5rem;
-  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.35));
+  width: min(280px, 72vw, 30svh);
+  margin: 0 auto clamp(0.75rem, 2svh, 1.5rem);
+  filter: drop-shadow(0 2px 16px rgba(0, 0, 0, 0.55));
 }
 
 .hero h1 {
@@ -500,7 +504,7 @@ hr {
   font-size: clamp(1.35rem, 4.5vw, 2.1rem);
   color: var(--sage);
   margin: 0 0 0.6em;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
 }
 
 .hero__text {
@@ -511,12 +515,19 @@ hr {
 }
 .hero--center .hero__text { margin-inline: auto; }
 
+/* The two hero buttons wrap onto separate rows on a narrow phone, which costs a
+   whole row of height. Tighter side padding keeps them on one line, and the
+   50px min-height on .btn means the tap target is unaffected. */
+.hero .btn-row { margin-top: clamp(1rem, 3svh, 1.75rem); }
+.hero .btn-row .btn { padding-inline: clamp(1.1rem, 4vw, 1.6rem); }
+
 .hero__badges {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem 0.9rem;
-  margin-top: 1.75rem;
+  margin-top: clamp(0.85rem, 2.5svh, 1.75rem);
+  margin-bottom: 0;             /* default ul margin would offset the centring */
   padding: 0;
   list-style: none;
   font-size: 0.78rem;
@@ -1263,9 +1274,7 @@ hr {
   }
   .nav-desktop .btn::after { display: none; }
 
-  .brand-mark { width: 46px; height: 46px; }
-  .brand-name { font-size: 1.32rem; }
-  .brand-sub { font-size: 0.66rem; }
+  .brand-logo { height: 42px; }
 
   .card-grid { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
   .card-grid--two { grid-template-columns: repeat(2, 1fr); }
@@ -1312,7 +1321,8 @@ hr {
    -------------------------------------------------------------------------- */
 
 @media (min-width: 75em) {
-  .hero__logo { width: 330px; }
+  /* Keep the svh cap here too, or a short laptop window loses the buttons. */
+  .hero__logo { width: min(330px, 38svh); }
 
   .nav-desktop a { padding: 0.7rem 1.05rem; font-size: 1.02rem; }
   .nav-desktop a::after { left: 1.05rem; right: 1.05rem; }

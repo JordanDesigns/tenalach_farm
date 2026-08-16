@@ -7,9 +7,9 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies. Upload the folde
 
 ## Before it goes live
 
-Three things still need real values. Each one is marked in the source so you can find it fast.
+One thing still needs a real value. It is marked in the source so you can find it fast.
 
-### 1. Form endpoint (required, or the forms do not send)
+### Form endpoint (required, or the forms do not send)
 
 Both forms post to a Formspree endpoint that is still a placeholder.
 
@@ -24,19 +24,30 @@ but nothing is delivered either, so this needs doing before launch.
 If you would rather use Web3Forms, Netlify Forms or your own script, the submit
 handler lives in `js/main.js` under `initForms()`.
 
-### 2. Airbnb listing links
+---
 
-The two "View on Airbnb" buttons currently point at `airbnb.ca`. Search `cabins.html`
-for `TODO: replace with the real Airbnb listing URL`. There are two, one per cabin.
+## Airbnb listings (confirmed)
 
-### 3. Confirm the Facebook page URL
+The two "View on Airbnb" buttons in `cabins.html` point at the real listings:
 
-Every page links to:
-`https://www.facebook.com/p/Tenalach-Farm-100064540729112/`
+| Cabin | Listing |
+|---|---|
+| Breezy Hill Bunkie | `https://www.airbnb.ca/rooms/1099475593897881439` |
+| Copper's Cabin | `https://www.airbnb.ca/rooms/1553978065386757835` |
 
-That was found by search rather than supplied, so it is worth one click to confirm
-it is the right page before launch. If it is wrong, find and replace across all
-six HTML files.
+These are the bare canonical URLs. The links were supplied as Airbnb share links
+carrying `check_in`, `check_out`, `guests` and tracking IDs, which were stripped.
+Leaving those on would have prefilled fixed dates and a single guest for every
+visitor, and the tracking IDs go stale. If you ever replace these, take everything
+after the `?` off first.
+
+---
+
+## Facebook page (confirmed)
+
+Every page links to `https://www.facebook.com/TenalachFarm1`, supplied and confirmed.
+It appears 19 times across the six HTML files, including the `sameAs` field in the
+schema markup in `index.html`. If it ever changes, find and replace across all six.
 
 ---
 
