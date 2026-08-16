@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Tenalach Farm, Marshalltown, Nova Scotia</title>
+<meta name="description" content="Get in touch with Tenalach Farm in Marshalltown, Nova Scotia. Ask about seedlings, cut flowers, workshops or the cabin rentals, or arrange a time to visit the farm.">
+<link rel="canonical" href="https://tenalachfarm.ca/contact.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Tenalach Farm">
+<meta property="og:description" content="Ask about plants, workshops, the cabins, or arrange a visit to the farm near Digby, Nova Scotia.">
+<meta property="og:image" content="https://tenalachfarm.ca/images/farm/farm-hollyhocks.jpg">
+<meta name="theme-color" content="#345e7e">
+
+<link rel="icon" href="images/brand/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/brand/logo-mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Tenalach Farm, home">
+      <img class="brand-mark" src="images/brand/logo-mark.png" alt="" width="46" height="46">
+      <span class="brand-text">
+        <span class="brand-name">Tenalach</span>
+        <span class="brand-sub">Farm</span>
+      </span>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="seedlings.html">Seedlings</a></li>
+        <li><a href="cabins.html">Cabins</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a class="btn btn--primary" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="seedlings.html">Seedlings</a></li>
+      <li><a href="cabins.html">Cabins</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-nav-footer">
+    <p>634 Marshalltown Road<br>Marshalltown, Nova Scotia</p>
+    <p><a href="mailto:TenalachFarm1@gmail.com">TenalachFarm1@gmail.com</a></p>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="hero hero--page hero--center">
+    <div class="hero__media">
+      <img src="images/farm/farm-hollyhocks.jpg"
+           srcset="images/farm/farm-hollyhocks-800.jpg 800w, images/farm/farm-hollyhocks.jpg 1600w"
+           sizes="100vw"
+           alt="Hollyhocks flowering in front of the old barn at Tenalach Farm"
+           width="1600" height="900" fetchpriority="high" decoding="async">
+    </div>
+    <div class="container hero__inner">
+      <span class="hero__kicker">Contact</span>
+      <h1>Say hello</h1>
+      <p class="hero__text">Questions about plants, workshops, the cabins, or a visit to the farm. We read everything and we answer as quickly as we can.</p>
+    </div>
+  </section>
+
+  <!-- ============================= FORM AND DETAILS ============================= -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+
+        <div class="reveal">
+          <div class="form-card">
+            <h2 style="margin-top:0">Send us a message</h2>
+            <p style="color:var(--ink-soft)">Fill in whatever is relevant and leave the rest. There is no wrong way to do it.</p>
+
+            <!--
+              Set the action below to your Formspree endpoint, for example:
+              action="https://formspree.io/f/xyzabcde"
+              Until it is replaced the form validates and then tells the visitor
+              to email instead, so no message is silently lost.
+            -->
+            <form data-form
+                  action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+                  method="post"
+                  data-success="Thank you for getting in touch. Your message has been sent and we will reply as soon as we can.">
+
+              <input type="hidden" name="_subject" value="Message from tenalachfarm.ca">
+              <div class="hp-field" aria-hidden="true">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="name">Your name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name" required>
+                  <p class="field-error"></p>
+                </div>
+                <div class="field">
+                  <label for="email">Email <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" required>
+                  <p class="field-error"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone <span class="hint">Optional, if you would rather we rang you.</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+                <p class="field-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="topic">What is it about? <span aria-hidden="true">*</span></label>
+                <select id="topic" name="topic" required>
+                  <option value="">Please choose</option>
+                  <option value="Seedlings and plants">Seedlings and plants</option>
+                  <option value="Cut flowers and bouquets">Cut flowers and bouquets</option>
+                  <option value="Workshops">Workshops</option>
+                  <option value="Cabin rentals">Cabin rentals</option>
+                  <option value="Visiting the farm">Visiting the farm</option>
+                  <option value="Markets">Markets</option>
+                  <option value="Something else">Something else</option>
+                </select>
+                <p class="field-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="message">Your message <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <p class="field-error"></p>
+              </div>
+
+              <button class="btn btn--primary btn--block" type="submit">Send message</button>
+
+              <div class="form-status" role="status" aria-live="polite"></div>
+              <p class="form-note">We will only use your details to reply to you. No mailing lists, and we do not pass anything on to anyone.</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="split__body reveal">
+          <span class="eyebrow">Find us</span>
+          <h2>Where we are</h2>
+
+          <ul class="detail-list">
+            <li>
+              <svg class="detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>
+              </svg>
+              <div>
+                <p class="detail__label">The farm</p>
+                <p class="detail__value">
+                  634 Marshalltown Road<br>
+                  Marshalltown, Nova Scotia<br>
+                  A few minutes from Digby
+                </p>
+                <p><a href="https://maps.google.com/?q=634+Marshalltown+Road,+Marshalltown,+Nova+Scotia" target="_blank" rel="noopener">Open in Google Maps</a></p>
+              </div>
+            </li>
+            <li>
+              <svg class="detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/>
+              </svg>
+              <div>
+                <p class="detail__label">Email</p>
+                <p class="detail__value"><a href="mailto:TenalachFarm1@gmail.com">TenalachFarm1@gmail.com</a></p>
+              </div>
+            </li>
+            <li>
+              <svg class="detail__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/>
+              </svg>
+              <div>
+                <p class="detail__label">Facebook</p>
+                <p class="detail__value"><a href="https://www.facebook.com/p/Tenalach-Farm-100064540729112/" target="_blank" rel="noopener">Tenalach Farm on Facebook</a></p>
+                <p style="color:var(--ink-soft);font-size:0.94rem">The quickest way to reach us, and the place we post everything first.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="notice notice--sage" style="margin-top:2rem">
+            <h3>About our opening hours</h3>
+            <p>We do not have set hours to publish. Farm days depend on the weather, the season and what needs doing, so rather than post times we cannot keep to, we let people know on Facebook when the farm is open, when a workshop is running and which markets we will be at.</p>
+            <p>If you would like to come up and see the place, just send us a message and we will sort out a time that works.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= QUICK ANSWERS ============================= -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Before you write</span>
+        <h2>A few quick answers</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="card-grid reveal-group">
+        <div class="notice reveal">
+          <h3>Can I order online?</h3>
+          <p>No, and that is deliberate. Plants are living things, and a tray that looks perfect one day can be sold out or simply not ready the next. We would rather not take your money for something we cannot be sure we can hand over. Ask us what we have and we will hold it for you.</p>
+        </div>
+        <div class="notice reveal">
+          <h3>Can I just turn up?</h3>
+          <p>Have a look at Facebook first to see whether we are about, or send a quick message. We are usually somewhere on the property, but a heads up means somebody will be there to meet you rather than halfway down a field.</p>
+        </div>
+        <div class="notice reveal">
+          <h3>Are the cabins farm stays?</h3>
+          <p>No. They are ordinary holiday rentals that happen to be on a farm. No chores and no obligations. You are welcome to walk the trails and see what is growing, but only if you feel like it.</p>
+        </div>
+        <div class="notice reveal">
+          <h3>Is it worth booking direct?</h3>
+          <p>Yes. Both cabins are on Airbnb so people can find them, but booking through us means there is no platform fee, so the same stay costs you less.</p>
+        </div>
+        <div class="notice reveal">
+          <h3>Can children come?</h3>
+          <p>Absolutely. There are ducks to look at, a friendly dog, and plenty of room to run about. Just keep an eye on little ones around the growing beds and the equipment.</p>
+        </div>
+        <div class="notice reveal">
+          <h3>Do you do bouquets for occasions?</h3>
+          <p>We do, within reason and within the season. Let us know what you have in mind and roughly when, and we will tell you honestly what we can manage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="images/brand/logo-full.png" alt="Tenalach Farm" width="150" height="150" loading="lazy">
+        <p class="footer-tagline">Grown, not Flown</p>
+        <p>A small family farm in Marshalltown, Nova Scotia, growing seedlings, cut flowers and herbs without chemical sprays.</p>
+        <div class="social-row">
+          <a href="https://www.facebook.com/p/Tenalach-Farm-100064540729112/" target="_blank" rel="noopener" aria-label="Tenalach Farm on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></svg>
+          </a>
+          <a href="mailto:TenalachFarm1@gmail.com" aria-label="Email Tenalach Farm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="seedlings.html">Seedlings</a></li>
+          <li><a href="cabins.html">Cabins</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>
+          634 Marshalltown Road<br>
+          Marshalltown, Nova Scotia<br>
+          Near Digby
+        </p>
+        <p><a href="https://maps.google.com/?q=634+Marshalltown+Road,+Marshalltown,+Nova+Scotia" target="_blank" rel="noopener">Open in Google Maps</a></p>
+      </div>
+      <div>
+        <h4>Opening times</h4>
+        <p>We do not keep fixed hours. We post on Facebook when the farm is open, when workshops are running and which markets we will be at.</p>
+        <p><a href="https://www.facebook.com/p/Tenalach-Farm-100064540729112/" target="_blank" rel="noopener">See our latest posts</a></p>
+        <p><a href="mailto:TenalachFarm1@gmail.com">TenalachFarm1@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year>2026</span> Tenalach Farm. All rights reserved.</p>
+      <p>Marshalltown, Nova Scotia, Canada</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
